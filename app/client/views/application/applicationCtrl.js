@@ -7,7 +7,7 @@ angular.module('reg')
     'currentUser',
     'settings',
     'Session',
-    'UserService',
+    'UserService',  
     function($scope, $rootScope, $state, $http, currentUser, Settings, Session, UserService){
 
       // Set up the user
@@ -39,7 +39,7 @@ angular.module('reg')
 
             if (schools[email]){
               $scope.user.profile.school = schools[email].school;
-              $scope.autoFilledSchool = true;
+              $scope.autoFilledSchool = false;
             }
           });
 
