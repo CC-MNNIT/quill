@@ -1,6 +1,6 @@
 var mongoose   = require('mongoose'),
     bcrypt     = require('bcrypt-nodejs'),
-    validator  = require('validator'),
+    validator  = require('validator'), // okay got it
     jwt        = require('jsonwebtoken');
     JWT_SECRET = process.env.JWT_SECRET;
 
@@ -28,7 +28,7 @@ var profile = {
   graduationYear: {
     type: String,
     enum: {
-      values: '2016 2017 2018 2019'.split(' '),
+      values: '2018 2019 2020 2021'.split(' '),
     }
   },
 
@@ -117,7 +117,8 @@ var status = {
   admittedBy: {
     type: String,
     validate: [
-      validator.isEmail,
+      validator.isEmail,   // where does thiis fun come from?//which this validaor?//it is handled  by mongoosejs library so dont we need to import /require it
+      //
       'Invalid Email',
     ],
     select: false
